@@ -18,18 +18,18 @@ body {
 }
 .candleIcon {
     position: absolute;
-    top: -12px;
-    left: 50%;
+    top: -40%;
+    left: 48%;
 }
 /* home */
 #home {
     height: 60vh;
     background-color: #fff;
     position: relative;
-    /* background-image: url('./images/heroImg.jpeg');
+    background-image: url('./images/pexels-ekaterina-bolovtsova-6311975.jpeg');  /*Photo by EKATERINA  BOLOVTSOVA: https://www.pexels.com/photo/lighted-candles-on-a-marble-tray-6311975/*/
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
+    background-position: center;
 }
 #home img {
     width: 100%;
