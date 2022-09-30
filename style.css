@@ -95,6 +95,10 @@ body {
     font-size: small;
     margin-top: -5%;
 }
+.candle-card {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
 .rose {
     position: absolute;
     top: -10%;
@@ -111,6 +115,14 @@ body {
 .rose img {
     width: 80%;
     margin-left: 8px;
+}
+/* ourProduct */
+#ourProduct {
+    margin: 60px auto;
+}
+/* gallery */
+#gallery {
+    margin: 100px auto;
 }
 @media screen and (max-width: 768px){
     .navbar-brand {
@@ -134,8 +146,7 @@ body {
     }
 
     .rose {
-        top: -19%;
-        left: 5%;
+        top: -11%;
         width: 50px;
         height: 50px;
     }
@@ -170,5 +181,10 @@ body {
     #about p {
         font-size: 15px;
         text-align: center;
+    }
+    .rose {
+        top: -10%;
+        width: 80px;
+        height: 80px;
     }
 }
