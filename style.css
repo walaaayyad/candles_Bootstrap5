@@ -98,6 +98,26 @@ body {
 #best img {
     filter: drop-shadow(1px 4px 3px #000);
 }
+#best .tt {
+    width: 80%;
+    height: 40%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+#best .tt:hover {
+    opacity: 1;
+}
 #best .btn {
     font-size: 12px !important;
 }
@@ -131,6 +151,18 @@ body {
 }
 .fa-heart {
     cursor: pointer;
+}
+/* product details modal */
+.quantity input {
+    width: 60px;
+    text-align: center;
+    margin-left: 10px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
 }
 /* ourProduct */
 #ourProduct {
