@@ -51,3 +51,18 @@ let modal = new bootstrap.Modal(modalWrap.querySelector('.modal'));
 modal.show();
 }
 
+// Handle heart clicking
+const heart = document.querySelectorAll('.fa-regular'),
+      heartNum = document.getElementById('heartNum');
+
+heart.forEach(i => {
+  i.addEventListener('click', ()=> {
+    i.classList.toggle('fa-solid');
+    if(i.closest('.fa-solid')) {
+      console.log('solid')
+      ++heartNum.innerHTML;
+    } else {
+      --heartNum.innerHTML;
+    }
+  })
+})
