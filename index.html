@@ -7,15 +7,17 @@
     <title>Candles</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles"> <!--SweetAlert2 [https://sweetalert2.github.io/#download]-->
     <link rel="stylesheet" href="./style.css">
+
 
 </head>
 <body data-bs-spy="scroll">
-    <!-- Start Navbar -->
+    <!---------- Start Navbar ---------->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top flex-column">
           <a class="d-block" href="#"><img src="./images/logo.png" width="150px" alt=""></a>
-            <div class="container-fluid"> 
+            <div class="container-fluid">
               <div class="collapse navbar-collapse m-auto ps-5" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
@@ -44,7 +46,23 @@
             </div>
         </nav>
     </div>
-    <!-- Start Home Section -->
+
+    <!---------- making cart ---------->
+    <div id="cartId" class="cart">
+      <i id="close-cart" class="fa-solid fa-rectangle-xmark closeBtn"></i>
+      <h2 class="cart-title">Your Cart</h2>
+      <!--Content-->
+      <div id="cartItems"></div> 
+      <!--Total-->
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">00</div>
+      </div>
+      <!--Buy Button-->
+      <button type="button" class="btn-buy">Buy Now</button>
+    </div>
+
+    <!---------- Start Home Section ---------->
     <section id="home" class="d-flex justify-content-center align-items-center">
         <div class="container">
             <!-- <div class="row">
@@ -61,6 +79,7 @@
         </div>
     </section>
 
+    <!---------- Start About Section ---------->
     <section id="about" class="text-center">
       <img src="./images/svgCandle.svg" width="60px" alt="">
         <p class="title">About GoldenCandles</p>
@@ -77,11 +96,13 @@
         </div>
     </section>
 
+    <!---------- Start Best Products Section ---------->
     <section id="best">
+      <div class="navbar-space"></div>
       <div class="container">
         <div class="row border-top justify-content-center align-items-center">
-          <p class="title text-capitalize text-center mt-5"> bestsellers</p> 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #f1d7e657;">
+          <p class="title text-capitalize text-center mt-5"> bestsellers</p>
+          <div id="1" class="col-lg-3 col-md-5 col-sm-10 candle-card m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #f1d7e657;">
             <div class="rose"><img src="./images/tanalee-youngblood-kkJuQhp9Kw0-unsplash-removebg-preview.png" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('FLOWER','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/tanalee-youngblood-kkJuQhp9Kw0-unsplash-removebg-preview.png')"><div class="tt">Details</div><img class="productImg" src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -90,12 +111,12 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0 bestPrice">$ 50</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(1,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','FLOWER',50)">Add To Card</button>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #ead0af2b;">
+          <div id="2" class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #ead0af2b;">
             <div class="rose"><img src="./images/sandalwood-removebg-preview.png" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('SANDALWOOD','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/sandalwood-removebg-preview.png')"><div class="tt">Details</div><img src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -104,12 +125,12 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0">$ 30</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(2,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','SANDALWOOD',30)">Add To Card</button>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #9488d019;">
+          <div id="3" class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #9488d019;">
             <div class="rose"><img src="./images/maksym-potapenko-IbQJRu_z0os-unsplash-removebg-preview.png" style="transform: rotate(282deg); margin-left: -25%;" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('LAVENDER','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/maksym-potapenko-IbQJRu_z0os-unsplash-removebg-preview.png')"><div class="tt">Details</div><img src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -118,12 +139,12 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0">$ 55</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(3,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','LAVENDER',55)">Add To Card</button>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #e6eaee;">
+          <div id="4" class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #e6eaee;">
             <div class="rose"><img src="./images/majid-rangraz-OO-p8TnDT34-unsplash-removebg-preview.png" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('FLOWER','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/majid-rangraz-OO-p8TnDT34-unsplash-removebg-preview.png')"><div class="tt">Details</div><img src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -132,12 +153,12 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0">$ 60</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(4,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','FLOWER',60)">Add To Card</button>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #a993b03d;">
+          <div id="5" class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #a993b03d;">
             <div class="rose"><img src="./images/gayatri-malhotra-yELIWgyqAjc-unsplash-removebg-preview.png" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('PEONY','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/gayatri-malhotra-yELIWgyqAjc-unsplash-removebg-preview.png')"><div class="tt">Details</div><img src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -146,12 +167,12 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0">$ 30</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(5,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','PEONY',30)">Add To Card</button>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #dbdcd77d;">
+          <div id="6" class="col-lg-3 col-md-5 col-sm-10 candle-card border m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5" style="background-color: #dbdcd77d;">
             <div class="rose"><img src="./images/alexandra-nosova-kly-z2c54b0-unsplash-removebg-preview.png" style="transform: rotate(275deg);" alt=""></div>
             <div class="item text-center" type="button" onclick="showModal('ORCHID','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','./images/alexandra-nosova-kly-z2c54b0-unsplash-removebg-preview.png')"><div class="tt">Details</div><img src="./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png" width="30%" alt="best-candle"></div>
             <div class="w-100 d-flex justify-content-between border-top mt-3 pt-2">
@@ -160,8 +181,8 @@
             </div>
             <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
             <div class="w-100 text-start">
-              <p class="fs-6 m-0">$ 50</p>
-              <button class="btn btn-dark mb-3">Add To Card</button>
+              <p class="fs-6 m-0">$ 70</p>
+              <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(6,'./images/luxury-aroma-candle-decorative-home-spa-essential_53876-133309__1_-removebg-preview.png','ORCHID',70)">Add To Card</button>
             </div>
           </div>
         </div>
@@ -169,7 +190,9 @@
       </div>
     </section>
 
+    <!---------- Start Our Product Section ---------->
     <section id="ourProduct">
+      <div class="navbar-space"></div>
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-5">
@@ -201,7 +224,9 @@
       </div>
     </section>
 
+    <!---------- Start Gallery Section ---------->
     <section id="gallery">
+      <div class="navbar-space"></div>
       <div class="container-fluid py-5">
         <div class="circleLogo">
           <img src="./images/svgCandle.svg" width="100%" alt="">
@@ -219,7 +244,7 @@
             <img src="./images/pexels-yan-krukov-7233906.jpg" width="50%" style="position: absolute; height: 50%; left: 50%;" alt=""> <!-Photo by Yan Krukov: https://www.pexels.com/photo/lighted-candle-on-the-table-7233906/->
             <img src="./images/daylight-letters-dKzcXqLuWgU-unsplash.jpg" width="50%" style="position: absolute; height: 50%; top: 50%;" alt=""> <!-Photo by <a href="https://unsplash.com/@daylightletters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">daylight letters</a> on <a href="https://unsplash.com/s/photos/candles?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>->
             <img src="./images/max-letek-d8m__Pd1MPY-unsplash.jpg" width="50%" style="position: absolute; height: 50%; top: 50%; left: 50%;" alt=""> <!-Photo by <a href="https://unsplash.com/@blackprojection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Max Letek</a> on <a href="https://unsplash.com/s/photos/candles?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>->
-            
+
           </div> -->
           <div class="col-md-5">
             <img src="./images/aromatherapy-table-setting-with-scented-candles-towel_53876-123939.jpeg" width="100%" style="clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
@@ -229,6 +254,7 @@
       </div>
     </section>
 
+    <!---------- Start Footer ---------->
     <footer>
       <div class="container mb-3">
         <div class="row justify-content-center border-top">
@@ -246,7 +272,8 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script> <!--SweetAlert2-->
     <script src="./app.js"></script>
 </body>
 </html>
->
