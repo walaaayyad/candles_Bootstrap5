@@ -49,6 +49,38 @@ body {
 #basket {
     cursor: pointer;
 }
+.beat {
+	animation: heartbeat 1.5s ease-in-out both;
+}
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+  @keyframes heartbeat {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        transform: scale(1.5);
+        animation-timing-function: ease-in;
+    }
+    17% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    33% {
+        transform: scale(1.5);
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+  }
+  
 /*------------ home ------------*/
 #home {
     height: 95vh;
@@ -83,6 +115,24 @@ body {
 }.spark3 {
     bottom: 0px;
     left: 4%;
+}
+.itemAlert {
+    opacity: 0;
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 43%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    transition: all 1s ease;
+}
+.itemAlert.show {
+    opacity: 1;
 }
 /*------------ About ------------*/
 #about {
@@ -160,6 +210,9 @@ body {
 }
 .fa-heart {
     cursor: pointer;
+}
+.fa-solid.fa-heart {
+    color: #bd3636;
 }
 /*------------ product details modal ------------*/
 .quantity input {

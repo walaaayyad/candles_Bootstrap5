@@ -53,13 +53,19 @@ modal.show();
 
 //----------------------- Handle Hearts Clicking ------------------------//
 const heart = document.querySelectorAll('.fa-regular'),
-      heartNum = document.getElementById('heartNum');
+      heartNum = document.getElementById('heartNum'),
+      heartBeat = document.querySelector('.navHeart');
+
 let arr=[];
-heart.forEach((i, indx) => {
+heart.forEach(i => {
   i.addEventListener('click', ()=> {
     i.classList.toggle('fa-solid');
     if(i.closest('.fa-solid')) {
       ++heartNum.innerHTML;
+      heartBeat.classList.remove('beat');
+      setTimeout(() => {
+        heartBeat.classList.add('beat');
+      }, 0);
     //  console.log(i.id);
     } else {
       --heartNum.innerHTML;
@@ -67,13 +73,13 @@ heart.forEach((i, indx) => {
     // localStorage.setItem('fav',heartNum.innerHTML);
   })
 })
-
 // heartNum.innerHTML = localStorage.getItem('fav');
 
 //------------------- Shopping Cart ----------------------//
 // const btnAddToCart = document.querySelectorAll('.btn-addToCart'),
 //       cartId = document.getElementById('cartId'),
-const cartContent = document.querySelector('#cartItems')
+const cartContent = document.querySelector('#cartItems');
+const itemAlert = document.querySelector('.itemAlert');
 let cartItems = [];    
 
 //---Function to add item to shopping cart
@@ -82,26 +88,22 @@ const addToCart = (id,img,title,price)=> {
   cartItems.push(id); // Add new item to array
   let newItem = document.createElement('div');
     newItem.innerHTML =
-      `
-      <div id=${id} class="cart-content">
-      <img src="${img}" class='cart-img' alt="">
-      <div class="detail-box">
-        <div class="cart-product-title">${title}</div>
-        <div class="cart-price">${price}</div>
-        <input type="number" value="1" class="cart-quantity">
-      </div>
-      <!--Remove a product from cart-->
-      <i class="fa-solid fa-trash cart-remove" onclick='removeItem(this)'></i>
-      </div>
-      `
+      `<div id=${id} class="cart-content">
+        <img src="${img}" class='cart-img' alt="">
+          <div class="detail-box">
+            <div class="cart-product-title">${title}</div>
+            <div class="cart-price">${price}</div>
+            <input type="number" value="1" class="cart-quantity">
+          </div>
+        <!--Remove a product from cart-->
+        <i class="fa-solid fa-trash cart-remove" onclick='removeItem(this)'></i>
+      </div>`
     cartContent.append(newItem);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your Item has been saved to cart',
-      showConfirmButton: false,
-      timer: 1500
-    })
+    //popup Alert box
+    itemAlert.classList.add('show');
+    setTimeout(() => {
+      itemAlert.classList.remove('show');
+    }, 2000);
   } else {
     Swal.fire('You are already add this item to cart, Increase Your Product Quantity')
     return false;
