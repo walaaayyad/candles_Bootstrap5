@@ -126,9 +126,25 @@ const updateTotal = ()=> {
   let num= [];
   if (shoppingCart.children.length > 0) {
     cartPrice.forEach(i => {
-      num.push(Math.floor(i.innerHTML));
+      num.push(Math.floor(i.innerHTML)); //Use Math.floor to change string value to number
     })
   }
   totalPrice.innerHTML = num.reduce((prev,curr)=> prev+curr,0);
 }
+
+//---Handle Open Shopping Cart
+const basket = document.getElementById('basket');
+const cart = document.querySelector('.cart');
+basket.addEventListener('click', ()=> {
+  console.log('btn clicked')
+  cart.classList.toggle('active');
+})
+
+
+//---Handle Close Shopping Card
+const closeBtn = document.querySelector('.closeBtn');
+closeBtn.addEventListener('click', ()=> {
+  cart.classList.add('close')
+})
+
 

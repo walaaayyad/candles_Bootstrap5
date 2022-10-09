@@ -46,6 +46,9 @@ body {
 .navbar-light .navbar-nav .nav-link:hover {
     color: rgb(200 184 131);
 }
+#basket {
+    cursor: pointer;
+}
 /*------------ home ------------*/
 #home {
     height: 95vh;
@@ -214,17 +217,20 @@ input[type=number]::-webkit-outer-spin-button {
 .cart {
     position: fixed;
     top: 15%;
-    right: 0;
+    right: -35%;
     width: 30%;
     min-height: 100vh;
     padding: 20px;
     background-color: #f5f5f5;
     box-shadow: 2px 2px 5px #000;
     z-index: 100;
-    transition: 0.3s;
+    transition: all 1s ease;
 }
 .cart.active {
     right: 0;
+}
+.cart.close {
+    right: -35%;
 }
 .cart-content {
     display: flex;
