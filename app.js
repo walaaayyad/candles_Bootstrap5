@@ -80,6 +80,7 @@ heart.forEach(i => {
 //       cartId = document.getElementById('cartId'),
 const cartContent = document.querySelector('#cartItems');
 const itemAlert = document.querySelector('.itemAlert');
+const basketNum = document.getElementById('basketNum')
 let cartItems = [];    
 
 //---Function to add item to shopping cart
@@ -104,6 +105,7 @@ const addToCart = (id,img,title,price)=> {
     setTimeout(() => {
       itemAlert.classList.remove('show');
     }, 2000);
+    ++basketNum.innerHTML; // Increase the number of cart items in basket
   } else {
     Swal.fire('You are already add this item to cart, Increase Your Product Quantity')
     return false;
@@ -118,6 +120,7 @@ const removeItem = (e)=> {
   cartItems.splice(delItem,1);
    e.parentElement.remove();
    updateTotal();
+   --basketNum.innerHTML; // Decrease the number of cart items in basket
 }
 //---Total Price 
 const shoppingCart = document.getElementById('cartItems');
