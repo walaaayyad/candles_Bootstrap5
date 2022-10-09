@@ -128,6 +128,7 @@ const shoppingCart = document.getElementById('cartItems');
 const updateTotal = ()=> {
   const cartPrice = document.querySelectorAll('.cart-price');
   const totalPrice = document.querySelector('.total-price');
+  const navTotalPrice = document.querySelector('.navTotal-price');
   let num= [];
   if (shoppingCart.children.length > 0) {
     cartPrice.forEach(i => {
@@ -135,6 +136,7 @@ const updateTotal = ()=> {
     })
   }
   totalPrice.innerHTML = num.reduce((prev,curr)=> prev+curr,0);
+  navTotalPrice.innerHTML = totalPrice.innerHTML;
 }
 
 //---Handle Open Shopping Cart
