@@ -22,9 +22,9 @@ const showModal = (title,des,src,roseSrc)=> {
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 text-center" style='background-color: #eee'>
+            <div class="col-md-6 text-center d-flex align-items-center justify-content-center" style='background-color: #eee'>
                 <div class="rose"><img src=${roseSrc} alt=""></div>
-                <img src=${src} width="30%" style='filter: drop-shadow(2px 4px 6px black);' alt="">
+                <img src=${src} width="60%" style='filter: drop-shadow(2px 4px 6px #21232540);' alt="">
             </div>
             <div class="col-md-6">
               <h1 class="mt-5">${title}</h1>
