@@ -5,9 +5,10 @@ text.innerHTML = text.innerHTML.split("").map(
     `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
 ).join("");
 
+
 //----------------------- Create Modal Window -------------------------//
 let modalWrap = null;
-const showModal = (title,des,src,roseSrc)=> {
+const showModal = (id,title,des,src,roseSrc,price)=> {
   if(modalWrap !== null){
     modalWrap.remove();
   }
@@ -21,7 +22,7 @@ const showModal = (title,des,src,roseSrc)=> {
       </div>
       <div class="modal-body">
         <div class="container">
-          <div class="row">
+          <div id=${id} class="row">
             <div class="col-md-6 text-center d-flex align-items-center justify-content-center" style='background-color: #eee'>
                 <div class="rose"><img src=${roseSrc} alt=""></div>
                 <img src=${src} width="60%" style='filter: drop-shadow(2px 4px 6px #21232540);' alt="">
@@ -29,12 +30,12 @@ const showModal = (title,des,src,roseSrc)=> {
             <div class="col-md-6">
               <h1 class="mt-5">${title}</h1>
               <p class="lead mt-3">${des}</p>
-              <p class="fw-bold fs-4">$ 50</p>
+              <p class="fw-bold fs-4">$ ${price}</p>
               <div class="quantity">
                 Quantity
                 <input type="number" value="1" width="50%">
               </div>
-              <button class="btn btn-dark mt-5">Add To Card</button>
+              <button type="button" class="btn btn-dark mt-5" onClick="x()">Add To Card</button>
             </div>
           </div>
         </div>
@@ -50,6 +51,7 @@ document.body.append(modalWrap);
 let modal = new bootstrap.Modal(modalWrap.querySelector('.modal'));
 modal.show();
 }
+let x = ()=> {console.log('helloooo Model')};
 
 //----------------------- Handle Hearts Clicking ------------------------//
 const heart = document.querySelectorAll('.fa-regular'),
@@ -149,9 +151,18 @@ basket.addEventListener('click', ()=> {
 
 
 //---Handle Close Shopping Card
-const closeBtn = document.querySelector('.closeBtn');
-closeBtn.addEventListener('click', ()=> {
+const menuCloseBtn = document.getElementById('menuCloseBtn');
+menuCloseBtn.addEventListener('click', ()=> {
   cart.classList.add('close')
 })
 
 
+//----------------------- Modal2 ----------------------//
+const modal2 = document.getElementById('modal2');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+//---Handle Close Btn
+modalCloseBtn.addEventListener('click', ()=> {
+  console.log('modal close btn');
+  modal2.style.opacity = '0';
+})
