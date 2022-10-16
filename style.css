@@ -31,9 +31,57 @@ body {
 /*------------ navbar ------------*/
 .navbar {
     background-color: #f5f5f5;
-    border-bottom: 3px solid #c6b37aed;
+    border-bottom: 3px solid rgba(198, 179, 122, 0.929);
     z-index: 2500;
 }
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(200 184 131);
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(198, 179, 122, 0.929)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-light .navbar-toggler {
+    border: none;
+}
+#basket {
+    cursor: pointer;
+}
+#heartNum, #basketNum {
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    background-color: #bd3636;
+}
+#basketNum {
+    background-color: #c7b983;
+}
+.icons .fa-solid {
+    color: #707070 !important;
+}
+#popupNavPrice {
+    opacity: 0;
+    background-color: #e6e3c6;
+    color: #000;
+    clip-path: polygon(0 27%, 74% 27%, 82% 8%, 89% 27%, 100% 27%, 100% 100%, 0 100%);
+    position: absolute;
+    right: 2px;
+    width: 150px;
+    height: 35px;
+    padding: 10px 20px;
+    padding-top: 10px;
+    font-size: 13px;
+    transition: all 0.7s ease-in-out;
+}
+#popupNavPrice.show {
+    opacity: 1;
+}
+/*
 .navbar-collapse {
     flex-grow: inherit;
 }
@@ -215,9 +263,6 @@ body {
     width: 80%;
     margin-left: 8px;
 }
-.fa-heart {
-    cursor: pointer;
-}
 .fa-solid.fa-heart {
     color: #bd3636;
 }
@@ -299,7 +344,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #f5f5f5;
     box-shadow: 2px 2px 5px #000;
     z-index: 100;
-    transition: all 1s ease;
+    transition: all 0.7s ease-in-out;
 }
 .cart.active {
     right: 0;
@@ -458,22 +503,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 600px) {
-    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        width: 90%;
-        margin: auto;
-    }
-    .navbar {
-        justify-content: center;
-    }
-    .candleIcon {
-        left: 0;
-    }
-    .navbar-brand {
-        margin-left: -18%;
-    }
-    .navbar-toggler {
-        margin-right: -18%;
-    }
     #home h1 {
         font-size: 2rem;
         margin-left: 0rem;

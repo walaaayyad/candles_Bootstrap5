@@ -126,7 +126,6 @@ const removeItem = (e)=> {
 }
 //---Total Price 
 const shoppingCart = document.getElementById('cartItems');
-
 const updateTotal = ()=> {
   const cartPrice = document.querySelectorAll('.cart-price');
   const totalPrice = document.querySelector('.total-price');
@@ -139,6 +138,16 @@ const updateTotal = ()=> {
   }
   totalPrice.innerHTML = num.reduce((prev,curr)=> prev+curr,0);
   navTotalPrice.innerHTML = totalPrice.innerHTML;
+  HandlePopupPrice();
+}
+
+//---Handle Total Price Popup 
+const pricePopup = document.getElementById('popupNavPrice');
+const HandlePopupPrice = ()=> {
+  pricePopup.classList.add('show');
+  setTimeout(()=> {
+    pricePopup.classList.remove('show');
+  },2000)
 }
 
 //---Handle Open Shopping Cart
@@ -166,3 +175,5 @@ modalCloseBtn.addEventListener('click', ()=> {
   console.log('modal close btn');
   modal2.style.opacity = '0';
 })
+
+
