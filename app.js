@@ -180,9 +180,13 @@ modalCloseBtn.addEventListener('click', ()=> {
 //---Handle Closing Navigation Menu When Click on Link or Basket
 const navLinks = document.querySelectorAll('.nav-link')
 const menuToggle = document.getElementById('navbarNavDropdown')
-const bsCollapse = new bootstrap.Collapse(menuToggle)
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => { bsCollapse.toggle() })
-  basket.addEventListener('click', () => { bsCollapse.hide() })
-})
+//const bsCollapse = new bootstrap.Collapse(menuToggle)
+// const logo = document.querySelector('.logo')
+//navLinks.forEach((link) => {
+ // console.log('navvvvv')
+ // link.addEventListener('click', () => { bsCollapse.toggle() });
+//   basket.addEventListener('click', () => { bsCollapse.hide() })
+//   logo.style.display = 'none'
+//})
+
 
