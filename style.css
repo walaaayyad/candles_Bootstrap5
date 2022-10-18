@@ -99,6 +99,9 @@ body {
 #popupNavPrice.show {
     opacity: 1;
 }
+.beat {
+	animation: heartbeat 1.5s ease-in-out both;
+}
 /*
 .navbar-collapse {
     flex-grow: inherit;
@@ -189,15 +192,14 @@ body {
 .itemAlert {
     opacity: 0;
     width: 200px;
-    height: 50px;
+    height: 30px;
     background-color: green;
     color: #fff;
     position: fixed;
-    top: 0;
-    left: 43%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 3px;
+    left: 40%;
+    text-align: center;
+    padding-top: 1px;
     z-index: 2000;
     transition: all 1s ease;
 }
@@ -477,6 +479,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 @media screen and (max-width: 768px){
+    .itemAlert {
+        left: 37%;
+    }
     .logo img {
         width: 85px;
     }
@@ -544,5 +549,20 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .cart {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .itemAlert {
+        width: 158px;
+        height: 25px;
+        left: 32%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .itemAlert {
+        left: 26%;
     }
 }

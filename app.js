@@ -8,7 +8,7 @@ text.innerHTML = text.innerHTML.split("").map(
 
 //----------------------- Create Modal Window -------------------------//
 let modalWrap = null;
-const showModal = (id,title,des,src,roseSrc,price)=> {
+const showModal = (id,title,des,src,price)=> {
   if(modalWrap !== null){
     modalWrap.remove();
   }
@@ -24,7 +24,6 @@ const showModal = (id,title,des,src,roseSrc,price)=> {
         <div class="container">
           <div id=${id} class="row">
             <div class="col-md-6 text-center d-flex align-items-center justify-content-center" style='background-color: #eee'>
-                <div class="rose"><img src=${roseSrc} alt=""></div>
                 <img src=${src} width="60%" style='filter: drop-shadow(2px 4px 6px #21232540);' alt="">
             </div>
             <div class="col-md-6">
