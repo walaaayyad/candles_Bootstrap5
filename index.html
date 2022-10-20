@@ -41,7 +41,12 @@
 
   <!---------------- Start Navbar ----------------->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
+    <div id="topBar" class="bg-dark text-light d-flex justify-content-between align-items-center px-3">
+      <span class="d-none d-md-block d-lg-block">info@example.com</span>
+      <span class="text-capitalize">Receive 10% off & free shipping on order over $50</span>
+      <span class="d-none d-md-block d-lg-block">888-8888888</span>
+    </div>
+    <div class="container-fluid pt-5">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -64,14 +69,14 @@
       </div>
       <div class="icons">
         <div>
-          <i class="fa-solid fa-heart me-3 navHeart position-relative"><span id="heartNum" class="ms-2">0</span></i>
-          <i id="basket" class="fa-solid fa-basket-shopping position-relative me-2"><span id="basketNum" class="ms-2">0</span></i>
+          <i class="fa-solid fa-heart me-3 navHeart position-relative">(<span id="heartNum">0</span>)</i>
+          <i id="basket" class="fa-solid fa-basket-shopping position-relative me-2">(<span id="basketNum">0</span>)</i>
         </div>
-        <div id="popupNavPrice" class="text-end gold">
+        <!-- <div id="popupNavPrice" class="text-end gold">
           <span>Total Price : </span>
           <span class="me-1">&nbsp; $</span>
           <span class="navTotal-price">0</span>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>
@@ -100,7 +105,7 @@
     <img src="./images/svgCandle.svg" width="60px" alt="">
       <p class="title">About GoldenCandles</p>
       <img src="./images/tttwinkle.svg" class="spark" alt="">
-      <h2 class="mt-3 text-capitalize">Pure Soy Candles in a Relaxing atmosphere</h2>
+      <h2 class="mt-3 text-capitalize">Pure Soy Candles</h2>
       <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at saepe cumque, beatae delectus quaerat obcaecati minima quae aliquid similique error? Voluptatum ratione veniam illo accusantium quasi similique placeat blanditiis!</p>
       <div class="container">
           <div class="row">
@@ -109,7 +114,7 @@
               <div class="col-md-3"></div>
               <div class="col-md-3"></div>
           </div>
-      </div>
+        </div>
   </section>
 
   <!---------- Start Best Products Section ---------->
@@ -117,7 +122,8 @@
     <div class="navbar-space"></div>
     <div class="container">
       <div class="row border-top justify-content-center align-items-center">
-        <p class="title text-capitalize text-center mt-5"> bestsellers</p>
+        <p class="title mt-5 mb-0 text-center">candles & difusers</p>
+        <h2 class="mt-3 text-capitalize text-center">weekly best sellers</h2>
         <div id="1" class="col-lg-3 col-md-5 col-sm-10 candle-card m-3 d-flex align-items-center justify-content-center flex-column position-relative mt-5 shadow" style="background-color: #f1d7e657;">
           <div class="rose"><img src="./images/alexandra-nosova-kly-z2c54b0-unsplash-removebg-preview.png" style="transform: rotate(275deg);" alt=""></div>
           <div class="item text-center" type="button" onclick="showModal(1,'ORCHID','Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero recusandae aperiam maxime temporibus incidunt natus.','./images/whiteOrchid-removebg-preview.png',70)"><div class="tt">Details</div><img class="mt-4" src="./images/whiteOrchid-removebg-preview.png" width="100%" alt="best-candle"></div>
@@ -127,7 +133,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0">$ 70</p>
+            <p class="fs-6">$ 70</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(1,'./images/whiteOrchid-removebg-preview.png','ORCHID',70)">Add To Card</button>
           </div>
         </div>
@@ -141,7 +147,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0">$ 30</p>
+            <p class="fs-6">$ 30</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(2,'./images/sandel-removebg-preview.png','SANDALWOOD',30)">Add To Card</button>
           </div>
         </div>
@@ -155,7 +161,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0">$ 55</p>
+            <p class="fs-6">$ 55</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(3,'./images/lavendar-removebg-preview.png','LAVENDER',55)">Add To Card</button>
           </div>
         </div>
@@ -169,7 +175,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0">$ 60</p>
+            <p class="fs-6">$ 60</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(4,'./images/whiteRose-removebg-preview.png','FLOWER',60)">Add To Card</button>
           </div>
         </div>
@@ -183,7 +189,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0">$ 30</p>
+            <p class="fs-6">$ 30</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(5,'./images/poeny-removebg-preview.png','PEONY',30)">Add To Card</button>
           </div>
         </div>
@@ -198,7 +204,7 @@
           </div>
           <p class="w-100 text-start candle-description">Lorem ipsum dolor sit amet.</p>
           <div class="w-100 text-start">
-            <p class="fs-6 m-0 bestPrice">$ 50</p>
+            <p class="fs-6 bestPrice">$ 50</p>
             <button class="btn-addToCart btn btn-dark mb-3" onclick="addToCart(6,'./images/rose-removebg-preview.png','FLOWER',50)">Add To Card</button>
           </div>
         </div>
@@ -223,17 +229,17 @@
       </div>
       <div class="row align-items-center justify-content-center mt-5">
         <div class="col-md-3 shadow border m-3 p-3 text-center" style="border-top-left-radius: 35px; border-bottom-right-radius: 35px;">
-          <img src="./images/cert.png" width="40px" alt="">
+          <img src="./images/cert-removebg-preview.png" width="40px" alt="">
           <p class="fw-bold mt-4 text-capitalize">best quality</p>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, esse.</p>
         </div>
         <div class="col-md-3 shadow border m-3 p-3 text-center" style="border-top-right-radius: 35px; border-bottom-left-radius: 35px;">
-          <img src="./images/shoping.png" width="40px" alt="">
+          <img src="./images/shoping-removebg-preview.png" width="40px" alt="">
           <p class="fw-bold mt-4 text-capitalize">shop online</p>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, esse.</p>
         </div>
         <div class="col-md-3 shadow border m-3 p-3 text-center" style="border-top-left-radius: 35px; border-bottom-right-radius: 35px;">
-          <img src="./images/delivery.png" width="40px" alt="">
+          <img src="./images/delivery-removebg-preview.png" width="40px" alt="">
           <p class="fw-bold mt-4 text-capitalize">free delivery</p>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, esse.</p>
         </div>
@@ -276,7 +282,7 @@
     <div class="container mb-3">
       <div class="row justify-content-center border-top">
         <div class="col-5 text-center mt-3">
-          <img src="./images/logo.png" width="150px" alt="">
+          <img src="./images/logo.png" width="100px" alt="">
           <div class="socials">
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-linkedin ms-2"></i>
@@ -295,3 +301,5 @@
   
 </body>
 </html>
+
+<!-- [inspire] https://askka.qodeinteractive.com/ -->

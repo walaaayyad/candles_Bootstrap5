@@ -16,7 +16,7 @@ const showModal = (id,title,des,src,price)=> {
   modalWrap.innerHTML = `
     <div id="item" class="modal fade" style="top: 20%;" tabindex="-1">
     <div class="modal-dialog" style="max-width: none; width: 80%;">
-    <div class="modal-content">
+    <div class="modal-content text-center">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -30,10 +30,14 @@ const showModal = (id,title,des,src,price)=> {
               <h1 class="mt-5">${title}</h1>
               <p class="lead mt-3">${des}</p>
               <p class="fw-bold fs-4">$ ${price}</p>
-              <div class="quantity">
-                Quantity
-                <input type="number" value="1" width="50%">
-              </div>
+                <div class="quantity">
+                  Quantity
+                    <div class="product-counter position-relative d-flex justify-content-center align-items-center mt-3">
+                      <button id="minus" class="btn border">-</button>
+                      <input type="number" value="1" min="0">
+                      <button id="plus" class="btn border">+</button>
+                    </div>
+                </div>
               <button type="button" class="btn btn-dark mt-5" onClick="x()">Add To Card</button>
             </div>
           </div>
@@ -76,6 +80,7 @@ heart.forEach(i => {
 })
 // heartNum.innerHTML = localStorage.getItem('fav');
 
+
 //------------------- Shopping Cart ----------------------//
 // const btnAddToCart = document.querySelectorAll('.btn-addToCart'),
 //       cartId = document.getElementById('cartId'),
@@ -91,12 +96,18 @@ const addToCart = (id,img,title,price)=> {
   let newItem = document.createElement('div');
     newItem.innerHTML =
       `<div id=${id} class="cart-content">
-        <img src="${img}" class='cart-img' alt="">
-          <div class="detail-box">
-            <div class="cart-product-title">${title}</div>
-            <div class="cart-price">${price}</div>
-            <input type="number" value="1" class="cart-quantity">
+        <div>
+          <img src="${img}" class='cart-img' alt="">
+          <div class="addToCart-counter position-relative d-flex justify-content-center align-items-center">
+            <button id="cart-minus" class="btn border">-</button>
+            <input id='cartInput' type="number" value="1" min="0">
+            <button id="cartPlus" class="btn border" onclick='ff()'>+</button>
           </div>
+        </div>
+        <div class="detail-box">
+          <div class="cart-product-title">${title}</div>
+          <div class="cart-price">${price}</div>
+        </div>
         <!--Remove a product from cart-->
         <i class="fa-solid fa-trash cart-remove" onclick='removeItem(this)'></i>
       </div>`
@@ -136,18 +147,33 @@ const updateTotal = ()=> {
     })
   }
   totalPrice.innerHTML = num.reduce((prev,curr)=> prev+curr,0);
-  navTotalPrice.innerHTML = totalPrice.innerHTML;
-  HandlePopupPrice();
+  //navTotalPrice.innerHTML = totalPrice.innerHTML;
+  //HandlePopupPrice();
+}
+//---Handle Icrease & Decrease Input Number
+const cartInput = document.getElementById('cartInput');
+const cartPlus = document.getElementById('cartPlus');
+
+if (cartContent.hasChildNodes()) {
+  // It has at least one
+  const ff = ()=> {
+    console.log('shopppping')
+  }
 }
 
+
+
+
+
+
 //---Handle Total Price Popup 
-const pricePopup = document.getElementById('popupNavPrice');
-const HandlePopupPrice = ()=> {
-  pricePopup.classList.add('show');
-  setTimeout(()=> {
-    pricePopup.classList.remove('show');
-  },2000)
-}
+// const pricePopup = document.getElementById('popupNavPrice');
+// const HandlePopupPrice = ()=> {
+//   pricePopup.classList.add('show');
+//   setTimeout(()=> {
+//     pricePopup.classList.remove('show');
+//   },2000)
+// }
 
 //---Handle Open Shopping Cart
 const basket = document.getElementById('basket');
@@ -187,5 +213,6 @@ const menuToggle = document.getElementById('navbarNavDropdown')
 //   basket.addEventListener('click', () => { bsCollapse.hide() })
 //   logo.style.display = 'none'
 //})
+
 
 
