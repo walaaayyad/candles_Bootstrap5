@@ -74,9 +74,9 @@ input[type=number] {
 .navbar {
     background-color: #f5f5f5;
     border-bottom: 3px solid #938046;
-    
+
 }
-.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link,
 .navbar-light .navbar-nav .nav-link:hover {
     color: #938046;
@@ -157,7 +157,7 @@ input[type=number] {
     top: -40%;
     left: 48%;
 }
-.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link,
 .navbar-light .navbar-nav .nav-link:hover {
     color: rgb(200 184 131);
@@ -196,7 +196,7 @@ input[type=number] {
         animation-timing-function: ease-out;
     }
   }
-  
+
 /*------------ home ------------*/
 #home {
     height: 95vh;
@@ -340,8 +340,8 @@ input[type=number] {
     width: 60px;
     text-align: center;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
 
    opacity: 1;
 
@@ -407,7 +407,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*------------ Cart ------------*/
 .cart {
     position: fixed;
-    top: 15%;
+    top: 18%;
     right: -100%;
     width: 30%;
     height: 100%;
@@ -418,12 +418,6 @@ input[type=number]::-webkit-outer-spin-button {
     z-index: 100;
     transition: all 0.7s ease-in-out;
 }
-.cart.active {
-    right: 5px;
-}
-/* .cart.close {
-    right: -100%;
-} */
 .cart-content {
     display: flex;
     justify-content: space-between;
@@ -614,6 +608,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .cart {
         width: 100%;
+        top: 10%;
     }
 }
 

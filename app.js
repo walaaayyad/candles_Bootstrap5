@@ -180,14 +180,16 @@ const basket = document.getElementById('basket');
 const cart = document.querySelector('.cart');
 basket.addEventListener('click', ()=> {
   console.log('btn clicked')
-  cart.classList.toggle('active');
+  cart.style.right = '3px';
 })
 
 
 //---Handle Close Shopping Card
 const menuCloseBtn = document.getElementById('menuCloseBtn');
 menuCloseBtn.addEventListener('click', ()=> {
-  cart.classList.add('close')
+  console.log('clooooooose')
+  cart.style.right = '-100%';
+  //cart.classList.add('close')
 })
 
 
