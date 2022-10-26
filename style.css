@@ -1,6 +1,7 @@
 body {
     background-color: #f5f5f5;
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
     overflow-x: hidden;
     scroll-behavior: smooth;
     /* max-width: 1400px;
@@ -379,6 +380,10 @@ input[type=number]::-webkit-outer-spin-button {
     z-index: 10;
     border-radius: 50%;
 }
+#gallery .gallery-img {
+    width: 100%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
 .textLogo {
     position: absolute;
     top: 0;
@@ -516,10 +521,13 @@ input[type=number]::-webkit-outer-spin-button {
         transform-origin: 0 93px;
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     #gallery .circleLogo {
         width: 100px;
         height: 100px;
+    }
+    #gallery .gallery-img {
+        height: 300px;
     }
     .textLogo span {
         transform-origin: 0 69px;
@@ -569,6 +577,13 @@ input[type=number]::-webkit-outer-spin-button {
     .cart {
         width: 50%;
     }
+    .navbar-space {
+        margin-top: -20%;
+    }
+    footer p {
+        font-size: 10px;
+        margin-top: 5px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -615,6 +630,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .logo {
         margin-top: 10%;
+    }
+    .navbar-space {
+        margin-top: -40%;
+    }
+    #gallery .gallery-img {
+        margin-bottom: 15px;
     }
 }
 
