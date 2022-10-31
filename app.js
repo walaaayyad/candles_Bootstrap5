@@ -98,7 +98,7 @@ const addToCart = (id,img,title,price)=> {
       `<div id=${id} class="cart-content">
         <div>
           <img src="${img}" class='cart-img' alt="">
-          <div class="addToCart-counter position-relative d-flex justify-content-center align-items-center">
+          <div class="addToCart-counter position-relative d-flex justify-content-center align-items-center mt-3">
             <button id="cart-minus" class="btn border">-</button>
             <input id='cartInput' type="number" value="1" min="0">
             <button id="cartPlus" class="btn border" onclick='ff()'>+</button>
@@ -106,7 +106,7 @@ const addToCart = (id,img,title,price)=> {
         </div>
         <div class="detail-box">
           <div class="cart-product-title">${title}</div>
-          <div class="cart-price">${price}</div>
+          <div class="cart-price">${price} $</div>
         </div>
         <!--Remove a product from cart-->
         <i class="fa-solid fa-trash cart-remove" onclick='removeItem(this)'></i>
@@ -175,23 +175,22 @@ if (cartContent.hasChildNodes()) {
 //   },2000)
 // }
 
-//---Handle Open Shopping Cart
+
+//------------------------ Shopping Card --------------------------//
 const basket = document.getElementById('basket');
 const cart = document.querySelector('.cart');
-basket.addEventListener('click', ()=> {
-  console.log('btn clicked')
-  cart.style.right = '3px';
-})
-
-
-//---Handle Close Shopping Card
 const menuCloseBtn = document.getElementById('menuCloseBtn');
+
+//---Handle Open Shopping Cart
+basket.addEventListener('mouseover', ()=> {
+  console.log('basket hover')
+  cart.classList.add('open')
+});
+//---Handle Close Shopping Cart
 menuCloseBtn.addEventListener('click', ()=> {
   console.log('clooooooose')
-  cart.style.right = '-100%';
-  //cart.classList.add('close')
-})
-
+  cart.classList.remove('open')
+}); 
 
 //----------------------- Modal2 ----------------------//
 const modal2 = document.getElementById('modal2');
