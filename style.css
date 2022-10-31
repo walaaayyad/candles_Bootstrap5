@@ -37,12 +37,36 @@ body {
 h2 {
     letter-spacing: 3px;
 }
+.btn {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+}
 .btn:focus {
     box-shadow: none !important;
 }
 /*-------------- Modal -------------*/
 .modal-dialog {
     margin: auto !important;
+}
+.modal-content {
+    background-color: #000;
+    color: #fff;
+}
+.modal-footer .btn {
+    background-color: #707070;
+    color: #fff;
+}
+.modal-footer .btn:hover {
+    border: 1px solid #fff !important;
 }
 /*---------- product-counter ---------*/
 .product-counter input,
@@ -310,9 +334,6 @@ input[type=number] {
 #best .tt:hover {
     opacity: 1;
 }
-#best .btn {
-    font-size: 12px !important;
-}
 #best .border-top {
     border-top: 1px solid #9e9e9e96 !important;
 }
@@ -439,6 +460,8 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-between;
     padding: 15px;
     border-bottom: 0.3px solid #c9c9c9;
+    background-color: transparent;
+    transition: background-color .6s ease-out;
 }
 .cart-content:hover {
     background-color: #f8f9fa;
@@ -497,7 +520,7 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 1.33em;
     letter-spacing: .3em;
 }
-.btn-buy {
+.btn-light {
     display: flex;
     margin: 1.5rem auto 0 auto;
     padding: 11px 20px;
@@ -511,7 +534,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     transition: color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out;
 }
-.btn-buy:hover {
+.btn-light:hover {
     background-color: #000;
     color: #fff;
     border: 1px solid #fff;

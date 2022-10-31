@@ -38,7 +38,7 @@ const showModal = (id,title,des,src,price)=> {
                       <button id="plus" class="btn border">+</button>
                     </div>
                 </div>
-              <button type="button" class="btn btn-dark mt-5" onClick="x()">Add To Card</button>
+              <button type="button" class="btn-light mt-5" onClick="x()">Add To Card</button>
             </div>
           </div>
         </div>
